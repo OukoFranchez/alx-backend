@@ -2,7 +2,7 @@
 """ Task 0 Module """
 
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
+def index_range(page: int, page_size: int) -> tuple[int, int]:
     """
 Return the start and end indices for a given page and page size.
 
@@ -14,6 +14,8 @@ Returns:
 - tuple[int, int]: A tuple containing the start and end indices
 for the given page.
 """
-    start_index = (page - 1) * page_size
-    end_index = page * page_size
-    return start_index, end_index
+    start, end = 0, 0
+    for i in range(page):
+        start += page_size
+        end += page_size
+    return (start, end)
